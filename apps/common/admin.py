@@ -23,7 +23,7 @@ class TildaAdmin(admin.ModelAdmin):
     list_filter = ["project_id", "group_id"]
 
     def has_add_permission(self, request):
-        if self.model.objects.count() > 0:
+        if self.model.objects.count() > 1:
             return False
 
 
