@@ -22,10 +22,6 @@ class TildaAdmin(admin.ModelAdmin):
     search_fields = ["id", "cookie"]
     list_filter = ["project_id", "group_id"]
 
-    def has_add_permission(self, request):
-        if self.model.objects.count() > 1:
-            return False
-
 
 @admin.register(models.TildaRequestResponseLog)
 class TildaRequestResponseLogAdmin(admin.ModelAdmin):
